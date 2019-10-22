@@ -89,7 +89,7 @@ print ("Welcome to Connect Four!")
 p1, p2 = input("Please enter Player 1 name: "), input("Please enter Player 2 name: ")
 
 #Define Grid Size
-rows, columns = int(input("Input Number of Rows: ")), int(input("Input Number of Columnss: "))
+rows, columns = int(input("Input Number of Rows: ")), int(input("Input Number of Columns: "))
 
 #Define Win Criteria
 win_crit = int(input("Input Num of Sequential Tokens Required to Win: "))
@@ -123,11 +123,11 @@ while play == "Yes":
             while col < 0 or col > len(board[0]) or board[0][col-1] != "-":
                 if repeat == 0:
                     print("\n","%s's Go" %(p1),"\n")
-                    col = int(input("Pick a column between %d and %d: " %(0,len(board))))
+                    col = int(input("Pick a column between %d and %d: " %(1,1+len(board))))
                     repeat += 1
                 else:
                     print("\n","Still %s's Go" %(p1),"\n")
-                    col = int(input("Ensure Column isn't FULL and is within range %d and %d: " %(0,len(board))))
+                    col = int(input("Ensure Column isn't FULL and is within range %d and %d: " %(1,1+len(board))))
                     repeat += 1
             #Board Updated       
             board = Insert_Token(board,"X",col)
@@ -137,11 +137,11 @@ while play == "Yes":
             while col < 0 or col > len(board[0]) or board[0][col-1] != "-":
                 if repeat == 0:
                     print("\n","%s's Go" %(p2),"\n")
-                    col = int(input("Pick a column between %d and %d: " %(0,len(board))))
+                    col = int(input("Pick a column between %d and %d: " %(1,1+len(board))))
                     repeat += 1
                 else:
                     print("\n","Still %s's Go" %(p2),"\n")
-                    col = int(input("Ensure Column isn't FULL and is within range %d and %d: " %(0,len(board))))
+                    col = int(input("Ensure Column isn't FULL and is within range %d and %d: " %(1,1+len(board))))
                     repeat += 1
                     
             board = Insert_Token(board,"O",col)
